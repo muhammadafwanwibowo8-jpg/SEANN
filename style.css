@@ -1,0 +1,463 @@
+style.css /* ==========================================
+   GLOBAL — HITAM, PUTIH, ABU
+========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --black: #0f0f0f;
+    --dark-gray: #2a2a2a;
+    --gray: #444444;
+    --light-gray: #888888;
+    --white: #ffffff;
+    --off-white: #f0f0f0;
+    --accent: #555555;
+}
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.bg-gray {
+    background-color: var(--dark-gray);
+}
+
+.section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--white);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: var(--gray);
+    margin: 10px auto 0;
+}
+
+.content-box {
+    background-color: var(--gray);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* ==========================================
+   NAVBAR
+========================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(15, 15, 15, 0.95);
+    z-index: 999;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--gray);
+}
+
+.nav-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--white);
+    letter-spacing: 2px;
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-link {
+    color: var(--off-white);
+    transition: color 0.3s;
+    font-size: 0.95rem;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--black);
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        display: none;
+        border-bottom: 1px solid var(--gray);
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+}
+
+/* ==========================================
+   HOME SECTION
+========================================== */
+.home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 60px;
+}
+
+.name {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    letter-spacing: 3px;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: var(--light-gray);
+    margin-bottom: 50px;
+}
+
+.rating-box {
+    margin-top: 40px;
+    padding: 25px;
+    background: var(--dark-gray);
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.rating-title {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: var(--light-gray);
+}
+
+.vote-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.vote-btn {
+    background: var(--gray);
+    border: none;
+    color: var(--white);
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.vote-btn:hover {
+    background: var(--accent);
+    transform: translateY(-2px);
+}
+
+.vote-btn.selected {
+    background: var(--light-gray);
+    color: var(--black);
+    font-weight: bold;
+}
+
+.vote-msg {
+    margin-top: 12px;
+    font-size: 0.9rem;
+    color: var(--light-gray);
+}
+
+/* ==========================================
+   EDUCATION
+========================================== */
+.edu-item {
+    text-align: center;
+    padding: 20px;
+    border-left: 3px solid var(--light-gray);
+}
+
+.edu-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.major {
+    color: var(--off-white);
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.status {
+    color: var(--light-gray);
+    font-size: 0.9rem;
+}
+
+/* ==========================================
+   MY STORY
+========================================== */
+.story-box {
+    line-height: 1.9;
+}
+
+.story-box p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.alasan-title {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    color: var(--light-gray);
+}
+
+.maaf {
+    margin-top: 20px;
+    color: var(--light-gray);
+    font-style: italic;
+}
+
+/* ==========================================
+   GALLERY
+========================================== */
+.empty-gallery {
+    text-align: center;
+    color: var(--light-gray);
+    padding: 30px;
+}
+
+/* ==========================================
+   COMMENTS FORM & LIST
+========================================== */
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.comment-form input,
+.comment-form textarea {
+    width: 100%;
+    padding: 14px;
+    background: var(--dark-gray);
+    border: 1px solid var(--accent);
+    color: var(--white);
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.comment-form input:focus,
+.comment-form textarea:focus {
+    outline: none;
+    border-color: var(--light-gray);
+}
+
+.comment-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.comment-form button {
+    padding: 14px 30px;
+    background: var(--accent);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.comment-form button:hover {
+    background: var(--light-gray);
+    color: var(--black);
+}
+
+.comment-form button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.status-msg {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    min-height: 1.2rem;
+}
+
+.comments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.loading,
+.no-comments {
+    text-align: center;
+    color: var(--light-gray);
+    padding: 20px;
+}
+
+.comment-card {
+    background: var(--dark-gray);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 3px solid var(--light-gray);
+}
+
+.comment-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.comment-name {
+    font-weight: bold;
+    font-size: 1rem;
+    color: var(--white);
+}
+
+.comment-date {
+    font-size: 0.85rem;
+    color: var(--light-gray);
+}
+
+.comment-text {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: var(--off-white);
+}
+
+.comment-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.comment-vote {
+    background: var(--gray);
+    border: none;
+    color: var(--white);
+    padding: 6px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.comment-vote:hover {
+    background: var(--accent);
+}
+
+.comment-vote.selected {
+    background: var(--light-gray);
+    color: var(--black);
+    font-weight: bold;
+}
+
+/* ==========================================
+   CONTACT
+========================================== */
+.contact-box {
+    text-align: center;
+}
+
+.contact-item {
+    font-size: 1.1rem;
+    margin: 15px 0;
+}
+
+.contact-item a {
+    color: var(--light-gray);
+    text-decoration: underline;
+}
+
+.contact-item a:hover {
+    color: var(--white);
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+.footer {
+    background: var(--black);
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 1px solid var(--gray);
+    color: var(--light-gray);
+    font-size: 0.9rem;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+@media (max-width: 768px) {
+    .name {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .content-box {
+        padding: 20px;
+    }
+
+    .vote-buttons {
+        flex-direction: column;
+    }
+}
